@@ -1,14 +1,16 @@
-import React from 'react'
-import Navigations from "./navigation/Navigations"
-import Footer from './footer/Footer'
+import React from "react";
+import Navigation from "./navigation/Navigations";
+import Footer from "./footer/Footer";
+import Hero from "./hero";
 
 function LandingPage() {
   return (
     <div>
-      <Navigations />
+      <Navigation />
+      <Hero />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;
