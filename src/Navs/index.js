@@ -6,7 +6,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import LandingPage from "../components/pages/LandingPage";
+import LandingPage from "../components/pages/landingPageSections/index";
 import ProfilePage from "../components/pages/ProfilePage";
 import Conversations from "../components/pages/ConversationsPage";
 
