@@ -1,7 +1,7 @@
 import React from "react";
 
-function ConversationsPage() {
-  return <div>this is ConversationsPage</div>;
+function ChatsPage() {
+  return <div>this is ChatsPage</div>;
 }
 
-export default ConversationsPage;
+export default ChatsPage;

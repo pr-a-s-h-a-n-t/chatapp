@@ -21,7 +21,7 @@ function Auth() {
         // The signed-in user info.
         const user = result.user;
         localStorage.setItem("user", JSON.stringify(user));
-        navigateUser("/conversations");
+        navigateUser("/chats");
         console.log(result, "result ");
       })
       .catch((error) => {
