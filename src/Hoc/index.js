@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useContext } from "react";
 import {
   AppBar,
   Box,
@@ -15,6 +16,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { darkContext, DarkProvider } from "../contex/darkModeContex";
+import { type } from "@testing-library/user-event/dist/type";
 
 const pages = [
   {
@@ -37,6 +40,7 @@ const pages = [
 ];
 
 function HocNav({ children }) {
+  const [state, dispatch] = useContext(darkContext);
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -62,7 +66,14 @@ function HocNav({ children }) {
 
   return (
     <>
-      <AppBar position="sticky" sx={{ background: " orange" }}>
+      <AppBar
+        position="sticky"
+        sx={{
+          //  background: " orange"
+          color: state.font1,
+          backgroundColor: state.background,
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box
@@ -182,7 +193,17 @@ function HocNav({ children }) {
 
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip>
-                <Button onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Button
+                  checked={state.mode === "dark"}
+                  onClick={() => {
+                    if (state.mode === "dark") {
+                      dispatch({ type: "MAKE_LIGHT" });
+                    } else {
+                      dispatch({ type: "MAKE_DARK" });
+                    }
+                  }}
+                  sx={{ p: 0 }}
+                >
                   <Typography sx={{ color: "black" }}>Dark Mode</Typography>
                 </Button>
               </Tooltip>

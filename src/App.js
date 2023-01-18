@@ -1,10 +1,12 @@
 import "./App.css";
 import Navs from "./Navs";
-
+import { DarkProvider } from "./contex/darkModeContex";
 function App() {
   return (
     <div className="App">
-      <Navs />
+      <DarkProvider>
+        <Navs />
+      </DarkProvider>
     </div>
   );
 }
