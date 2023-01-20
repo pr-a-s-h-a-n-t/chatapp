@@ -154,12 +154,12 @@ export default function ChatsPage() {
               height: "8%",
               border: "1px solid red",
               padding: "4px",
-              margin: "auto",
               position: "sticky",
               bottom: "0",
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <input

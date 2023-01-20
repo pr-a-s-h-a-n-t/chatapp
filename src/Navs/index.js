@@ -22,7 +22,7 @@ function Navs() {
     if (true) {
       return <Outlet />;
     } else {
-      return <Navigate to="./" />;
+      return <Navigate to="/" />;
     }
   };
 

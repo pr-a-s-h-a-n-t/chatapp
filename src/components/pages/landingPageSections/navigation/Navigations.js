@@ -1,23 +1,50 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import { useContext } from "react";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Button,
+  MenuItem,
+  Tooltip,
+} from "@mui/material";
+// import Logo from "../../src/assets/workPlaceLogo.png";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import "./Navigations.css";
+import { useNavigate } from "react-router-dom";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import { darkContext, DarkProvider } from "../../../../contex/darkModeContex";
+import { type } from "@testing-library/user-event/dist/type";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import NightsStayIcon from "@mui/icons-material/NightsStay";
+import CloudIcon from "@mui/icons-material/Cloud";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = [
+  {
+    name: "Chat",
+    path: "/chats",
+  },
+  {
+    name: "Connect",
+    path: "/connectionrequests",
+  },
+  {
+    name: " settings",
+    path: "/settings",
+  },
 
-export default function Navigation() {
+  {
+    name: "Profile",
+    path: "/profile",
+  },
+];
+
+function HocNav({ children }) {
+  const [state, dispatch] = useContext(darkContext);
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -36,127 +63,192 @@ export default function Navigation() {
     setAnchorElUser(null);
   };
 
-  return (
-    <AppBar position="static" sx={{ backgroundColor: "grey" }}>
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+  const handleNavigate = (path) => {
+    navigate(`${path}`);
+  };
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+  return (
+    <>
+      <AppBar
+        position="sticky"
+        sx={{
+          //  background: " orange"
+          color: state.font1,
+          backgroundColor: state.background,
+        }}
+      >
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Box
               sx={{
-                display: { xs: "block", md: "none" },
+                width: "clamp(12px, 2.5rem, 6rem )",
+                display: { xs: "none", md: "flex" },
+              }}
+            >
+              <WhatsAppIcon
+                sx={{
+                  maxWidth: "250px",
+                  width: "100%",
+                  color: "white",
+
+                  borderRadius: "50%",
+                  padding: "0.1rem",
+                  backgroundColor: "red",
+                  fontSize: "35px",
+                  margin: "2px",
+                }}
+              />
+              <Typography
+                sx={{
+                  color: "red",
+                  fontWeight: "bold",
+                  fontSize: "clamp(12px, 1.8rem, 20px )",
+                  marginTop: "5px",
+                  textShadow: "3px 0px 4px black",
+                }}
+              >
+                chatApp
+              </Typography>
+            </Box>
+
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                // color="black"
+                sx={{
+                  color: state.font1,
+                  backgroundColor: state.background,
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: "block", md: "none" },
+                }}
+                PaperProps={{
+                  style: {
+                    color: state.font1,
+                    backgroundColor: state.background,
+                  },
+                }}
+              >
+                {pages.map((page) => (
+                  <MenuItem
+                    sx={{
+                      color: state.font1,
+                      backgroundColor: state.background,
+                    }}
+                    key={page.name}
+                    onClick={() => handleNavigate(page.path)}
+                  >
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+
+              <Box
+                sx={{
+                  width: "auto",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <WhatsAppIcon
+                  sx={{
+                    maxWidth: "250px",
+                    width: "100%",
+                    color: "white",
+                    color: state.font1,
+
+                    borderRadius: "50%",
+                    padding: "0.1rem",
+                    backgroundColor: "red",
+                    fontSize: "35px",
+                    margin: "2px",
+                  }}
+                />
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                justifyContent: "center",
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
+                <Button
+                  key={page.name}
+                  onClick={() => handleNavigate(page.path)}
+                  sx={{
+                    my: 2,
+                    color: state.font1,
+                    backgroundColor: state.background,
+                    display: "block",
+                    padding: "0 2rem",
+                  }}
+                >
+                  {page.name}
+                </Button>
               ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+            </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip>
+                <Button
+                  checked={state.mode === "dark"}
+                  onClick={() => {
+                    if (state.mode === "dark") {
+                      dispatch({ type: "MAKE_LIGHT" });
+                    } else {
+                      dispatch({ type: "MAKE_DARK" });
+                    }
+                  }}
+                  sx={{ p: 0 }}
+                >
+                  {state.mode === "dark" ? (
+                    <WbSunnyIcon
+                      sx={{
+                        color: state.iconColor,
+                      }}
+                    />
+                  ) : (
+                    <div>
+                      <NightsStayIcon
+                        sx={{
+                          color: state.iconColor,
+                        }}
+                      />
+                    </div>
+                  )}
+                </Button>
+              </Tooltip>
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+      {children}
+    </>
   );
 }
+
+export default HocNav;
