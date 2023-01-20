@@ -6,6 +6,9 @@ const light = {
   font2: "#white",
   pinchat: "#F7F7F7",
   pinSelect: "#2F80ED",
+  mode: "light",
+  iconColor: " #2f0303"
+
 };
 const dark = {
   background: "#000",
@@ -13,6 +16,9 @@ const dark = {
   font2: "#000",
   pinchat: "#2F80ED",
   pinSelect: "#F7F7F7",
+  mode: "dark",
+  iconColor: "yellow"
+
 };
 
 export const darkContext = createContext(null);

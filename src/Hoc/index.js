@@ -18,6 +18,9 @@ import { useNavigate } from "react-router-dom";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { darkContext, DarkProvider } from "../contex/darkModeContex";
 import { type } from "@testing-library/user-event/dist/type";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import NightsStayIcon from "@mui/icons-material/NightsStay";
+import CloudIcon from "@mui/icons-material/Cloud";
 
 const pages = [
   {
@@ -87,6 +90,7 @@ function HocNav({ children }) {
                   maxWidth: "250px",
                   width: "100%",
                   color: "white",
+
                   borderRadius: "50%",
                   padding: "0.1rem",
                   backgroundColor: " green",
@@ -114,7 +118,11 @@ function HocNav({ children }) {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="black"
+                // color="black"
+                sx={{
+                  color: state.font1,
+                  backgroundColor: state.background,
+                }}
               >
                 <MenuIcon />
               </IconButton>
@@ -135,9 +143,19 @@ function HocNav({ children }) {
                 sx={{
                   display: { xs: "block", md: "none" },
                 }}
+                PaperProps={{
+                  style: {
+                    color: state.font1,
+                    backgroundColor: state.background,
+                  },
+                }}
               >
                 {pages.map((page) => (
                   <MenuItem
+                    sx={{
+                      color: state.font1,
+                      backgroundColor: state.background,
+                    }}
                     key={page.name}
                     onClick={() => handleNavigate(page.path)}
                   >
@@ -158,6 +176,8 @@ function HocNav({ children }) {
                     maxWidth: "250px",
                     width: "100%",
                     color: "white",
+                    color: state.font1,
+
                     borderRadius: "50%",
                     padding: "0.1rem",
                     backgroundColor: " green",
@@ -181,7 +201,8 @@ function HocNav({ children }) {
                   onClick={() => handleNavigate(page.path)}
                   sx={{
                     my: 2,
-                    color: "black",
+                    color: state.font1,
+                    backgroundColor: state.background,
                     display: "block",
                     padding: "0 2rem",
                   }}
@@ -204,7 +225,21 @@ function HocNav({ children }) {
                   }}
                   sx={{ p: 0 }}
                 >
-                  <Typography sx={{ color: "black" }}>Dark Mode</Typography>
+                  {state.mode === "dark" ? (
+                    <WbSunnyIcon
+                      sx={{
+                        color: state.iconColor,
+                      }}
+                    />
+                  ) : (
+                    <div>
+                      <NightsStayIcon
+                        sx={{
+                          color: state.iconColor,
+                        }}
+                      />
+                    </div>
+                  )}
                 </Button>
               </Tooltip>
             </Box>
