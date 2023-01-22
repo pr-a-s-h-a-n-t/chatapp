@@ -13,12 +13,10 @@ import HocNav from "../Hoc";
 import Settings from "../components/pages/Settings";
 import ProfileSetup from "../components/pages/ProfileSetup";
 import ConnectionRequest from "../components/pages/ConnectionRequest";
+import ConversationsPageTest from "../components/pages/conversationsTest";
 
 function Navs() {
-
-
   const ProtectedRoute = () => {
-
     if (true) {
       return <Outlet />;
     } else {
@@ -59,8 +57,27 @@ function Navs() {
           />
           <Route
             path="/connectionrequests"
-            element={<HocNav> <ConnectionRequest />  </HocNav>} />
-        </Routes>
+            element={
+              <HocNav>
+                {" "}
+                <ConnectionRequest />{" "}
+              </HocNav>
+            }
+          />
+       
+
+        {/* testing  */}
+
+        <Route
+          path="/ConversationsPageTest"
+          element={
+            <HocNav>
+              {" "}
+              <ConversationsPageTest />{" "}
+            </HocNav>
+          }
+        />
+          </Routes>
       </Router>
     </div>
   );

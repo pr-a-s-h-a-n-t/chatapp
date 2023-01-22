@@ -40,6 +40,12 @@ const pages = [
     name: "Profile",
     path: "/profile",
   },
+  {
+    name: "TestPage",
+    path: "/ConversationsPageTest",
+  },
+
+  
 ];
 
 function HocNav({ children }) {
