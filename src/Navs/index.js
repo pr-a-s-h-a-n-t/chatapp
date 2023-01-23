@@ -15,6 +15,19 @@ import ProfileSetup from "../components/pages/ProfileSetup";
 import ConnectionRequest from "../components/pages/ConnectionRequest";
 import ConversationsPageTest from "../components/pages/conversationsTest";
 
+// ---------------------$$$$$$$--------------------
+
+import LandingPageV1 from "../components/pages/V1/Landingpage/index";
+import Chat from "../components/pages/V1/Chat/chatScreen/index";
+import GroupChat from "../components/pages/V1/Chat/groupRecentChat/index";
+import NewChat from "../components/pages/V1/Chat/newChat/index";
+import RecentChat from "../components/pages/V1/Chat/recentChat/index";
+import SignUp from "../components/pages/V1/Onboarding/index";
+import Profile from "../components/pages/V1/Profile/index";
+import SettingsV1 from "../components/pages/V1/Settings/index";
+
+// --------------------------------$$$$$$$$$$$$$$-------------------
+
 function Navs() {
   const ProtectedRoute = () => {
     if (true) {
@@ -64,20 +77,33 @@ function Navs() {
               </HocNav>
             }
           />
-       
 
-        {/* testing  */}
+          <Route
+            path="/ConversationsPageTest"
+            element={
+              <HocNav>
+                <ConversationsPageTest />
+              </HocNav>
+            }
+          />
+        </Routes>
 
-        <Route
-          path="/ConversationsPageTest"
-          element={
-            <HocNav>
-              {" "}
-              <ConversationsPageTest />{" "}
-            </HocNav>
-          }
-        />
-          </Routes>
+        <Routes>
+          <Route path="/landingpageV1" exact element={<LandingPageV1 />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/onboarding" element={<SignUp />} />
+
+            <Route path="/chat/resentchat" element={<RecentChat />} />
+
+            <Route path="/SettingsV1" element={<SettingsV1 />} />
+
+            <Route path="/chat/newchat" element={<NewChat />} />
+
+            <Route path="/chat/dms" element={<Chat type="dms" />} />
+
+            <Route path="/settings/profile" element={<Profile />} />
+          </Route>
+        </Routes>
       </Router>
     </div>
   );
