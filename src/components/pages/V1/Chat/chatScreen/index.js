@@ -31,14 +31,14 @@ function ChatScreen({ type }) {
           <div className="chatScreen-header_img">
             <img
               style={{ width: "50px", borderRadius: "inherit" }}
-              src="https://lh3.googleusercontent.com/ogw/AAEL6shYPNjsXNSCG2B_c5CNaapyY07PvMV9pMhGTYuruo4=s64-c-mo"
+              src="https://lh3.googleusercontent.com/a/AEdFTp5Km_5UxsR7YMkXIuww65eLRhNtbk4tMU8TK1Fr=s96-c"
               alt="logo"
             />
           </div>
         </Grid>
         <Grid item xs={7.5}>
           <div className="chatScreen-header_name">
-            <div>sahil jaryal</div>
+            <div>Name</div>
             <div>last seen</div>
           </div>
         </Grid>

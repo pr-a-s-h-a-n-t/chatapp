@@ -5,7 +5,7 @@ import chatArea from "./chatArea/index";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import TestNav from "./testNav/index"
+import TestNav from "./testNav/index";
 
 import { darkContext, DarkProvider } from "../../../contex/darkModeContex";
 
@@ -14,7 +14,6 @@ function ConversationsPageTest() {
 
   const [mobileSectionState, setMobileSectionState] = useState("sidebar");
   const [selectedJob, setSelectedJob] = useState(null);
-
 
   const style = {
     container: {
@@ -26,14 +25,15 @@ function ConversationsPageTest() {
       height: "100%",
       padding: "1rem",
       margin: "0 2px",
-    },}
-    const Item = styled(Paper)(({ theme }) => ({
-      backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-      ...theme.typography.body2,
-      padding: theme.spacing(1),
-      textAlign: "center",
-      color: theme.palette.text.secondary,
-    }));
+    },
+  };
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
 
   return (
     <Grid
@@ -43,12 +43,14 @@ function ConversationsPageTest() {
       //     backgroundColor: state.shades.primary,
       // }}
     >
-      <Grid   md={0.65}   
-      sx={{
-        border: "1px solid gold",
-      }}
-        item  >
-       <TestNav />
+      <Grid
+        md={0.65}
+        sx={{
+          border: "1px solid gold",
+        }}
+        item
+      >
+        <TestNav />
       </Grid>
       <Grid
         sx={{
@@ -58,7 +60,7 @@ function ConversationsPageTest() {
           // },
 
           // marginTop: "2rem",
-          
+
           border: "2px solid green",
           boxSizing: "border-box",
           overflowWrap: "break-word",
