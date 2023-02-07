@@ -7,11 +7,11 @@ import {
   Routes,
 } from "react-router-dom";
 import LandingPage from "../components/pages/landingPageSections/index";
-import ProfilePage from "../components/pages/ProfilePage";
+// import ProfilePage from "../components/pages/ProfilePage";
 // import Conversations from "../components/pages/conversations/index";
 import HocNav from "../Hoc";
 // import Settings from "../components/pages/Settings";
-import ProfileSetup from "../components/pages/ProfileSetup";
+// import ProfileSetup from "../components/pages/ProfileSetup";
 // import ConnectionRequest from "../components/pages/ConnectionRequest";
 import ConversationsPageTest from "../components/pages/conversationsTest";
 
@@ -42,7 +42,7 @@ function Navs() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/profilesetup" element={<ProfileSetup />} />
+          {/* <Route path="/profilesetup" element={<ProfileSetup />} /> */}
            
           
          
