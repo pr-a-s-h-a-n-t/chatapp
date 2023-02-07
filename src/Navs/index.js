@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import LandingPage from "../components/pages/landingPageSections/index";
 import ProfilePage from "../components/pages/ProfilePage";
-import Conversations from "../components/pages/conversations/index";
+// import Conversations from "../components/pages/conversations/index";
 import HocNav from "../Hoc";
 import Settings from "../components/pages/Settings";
 import ProfileSetup from "../components/pages/ProfileSetup";
@@ -43,49 +43,11 @@ function Navs() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/profilesetup" element={<ProfileSetup />} />
-          <Route
-            path="/profile"
-            element={
-              <HocNav>
-                <ProfilePage />
-              </HocNav>
-            }
-          />
-          <Route
-            path="/chats"
-            element={
-              <HocNav>
-                <Conversations />
-              </HocNav>
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <HocNav>
-                {" "}
-                <Settings />{" "}
-              </HocNav>
-            }
-          />
-          <Route
-            path="/connectionrequests"
-            element={
-              <HocNav>
-                {" "}
-                <ConnectionRequest />{" "}
-              </HocNav>
-            }
-          />
-
-          <Route
-            path="/ConversationsPageTest"
-            element={
-              <HocNav>
-                <ConversationsPageTest />
-              </HocNav>
-            }
-          />
+           
+          
+         
+          
+ 
         </Routes>
 
         <Routes>
