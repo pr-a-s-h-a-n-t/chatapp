@@ -9,7 +9,7 @@ import {
 import LandingPage from "../components/pages/landingPageSections/index";
 // import ProfilePage from "../components/pages/ProfilePage";
 // import Conversations from "../components/pages/conversations/index";
-import HocNav from "../Hoc";
+// import HocNav from "../Hoc";
 // import Settings from "../components/pages/Settings";
 // import ProfileSetup from "../components/pages/ProfileSetup";
 // import ConnectionRequest from "../components/pages/ConnectionRequest";
@@ -27,6 +27,9 @@ import Profile from "../components/pages/V1/Profile/index";
 import SettingsV1 from "../components/pages/V1/Settings/index";
 
 // --------------------------------$$$$$$$$$$$$$$-------------------
+
+// --------sidebar------------------------
+import HocNav from "../Hoc/index";
 
 function Navs() {
   const ProtectedRoute = () => {
@@ -46,7 +49,7 @@ function Navs() {
            
           
          
-          
+          <Route path="/sidebar" element={<HocNav />} />
  
         </Routes>
 

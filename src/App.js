@@ -7,11 +7,12 @@ import {UserProvider} from './contex/userContex'
 function App() {
   return (
     <div className="App">
-       <UserProvider> 
-      <DarkProvider>
-        <Navs />
-        {/* <WebRTC /> */}
-      </DarkProvider>
+      <UserProvider>
+        <DarkProvider>
+          <Navs />
+
+          {/* <WebRTC /> */}
+        </DarkProvider>
       </UserProvider>
     </div>
   );
