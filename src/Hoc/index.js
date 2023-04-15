@@ -251,6 +251,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import HomeIcon from "@mui/icons-material/Home";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import PersonPinIcon from "@mui/icons-material/PersonPin";
+import ExploreIcon from "@mui/icons-material/Explore";
 
 const drawerWidth = 240;
 const pages = [
@@ -276,6 +280,7 @@ const pages = [
     path: "/ConversationsPageTest",
   },
 ];
+
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
@@ -419,7 +424,15 @@ export default function HocNav({ Children }) {
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
+          {[
+            "Home",
+            "Search",
+            "Explore",
+            "Reels",
+            "Notification",
+            "Create",
+            "Profile",
+          ].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
                 sx={{
