@@ -234,6 +234,8 @@ import { useNavigate } from "react-router-dom";
 import * as React from "react";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -255,6 +257,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
 import ExploreIcon from "@mui/icons-material/Explore";
+import SearchIcon from "@mui/icons-material/Search";
 
 const drawerWidth = 240;
 const pages = [
@@ -278,6 +281,44 @@ const pages = [
   {
     name: "TestPage",
     path: "/ConversationsPageTest",
+  },
+];
+
+const Pr = [
+  {
+    name: "Home",
+    path: "/Search",
+    icon: <HomeIcon />,
+  },
+  {
+    name: "Search",
+    path: "/Search",
+    icon: <SearchIcon />,
+  },
+  {
+    name: "Explore",
+    path: "/Explore",
+    icon: <ExploreIcon />,
+  },
+  {
+    name: "Messages",
+    path: "/chat",
+    icon: "<>",
+  },
+  {
+    name: "Notification",
+    path: "/Profile",
+    icon: <FavoriteBorderIcon />,
+  },
+  {
+    name: "Create",
+    path: "/Profile",
+    icon: <ExploreIcon />,
+  },
+  {
+    name: "Profile",
+    path: "/Profile",
+    icon: <PersonPinIcon />,
   },
 ];
 
@@ -394,11 +435,11 @@ export default function HocNav({ Children }) {
           </IconButton>
         </DrawerHeader>
         <Divider />
+
         <List>
-          {pages.map((text, index) => (
+          {Pr.map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
-                onClick={() => handleNavigate(text.path)}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",
@@ -412,7 +453,7 @@ export default function HocNav({ Children }) {
                     justifyContent: "center",
                   }}
                 >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  {text.icon}
                 </ListItemIcon>
                 <ListItemText
                   primary={text.name}
@@ -422,39 +463,34 @@ export default function HocNav({ Children }) {
             </ListItem>
           ))}
         </List>
-        <Divider />
-        <List>
-          {[
-            "Home",
-            "Search",
-            "Explore",
-            "Reels",
-            "Notification",
-            "Create",
-            "Profile",
-          ].map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: "block" }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? "initial" : "center",
-                  px: 2.5,
-                }}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : "auto",
-                    justifyContent: "center",
-                  }}
-                >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+
+        <Box
+          sx={{
+            width: "100%",
+            border: "1px solid red",
+            padding: "0 0 0 10px",
+          }}
+        >
+          <Button
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignContent: "center",
+              justifyContent: "space-between !important",
+              color: "grey",
+            }}
+          >
+            <MenuIcon />
+            <Typography
+              sx={{
+                padding: "0 0 0 20px",
+                color: "black",
+              }}
+            >
+              More
+            </Typography>
+          </Button>
+        </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
