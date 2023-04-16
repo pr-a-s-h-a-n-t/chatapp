@@ -258,6 +258,8 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonPinIcon from "@mui/icons-material/PersonPin";
 import ExploreIcon from "@mui/icons-material/Explore";
 import SearchIcon from "@mui/icons-material/Search";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import Badge from "@mui/material/Badge";
 
 const drawerWidth = 240;
 const pages = [
@@ -309,11 +311,12 @@ const Pr = [
     name: "Notification",
     path: "/Profile",
     icon: <FavoriteBorderIcon />,
+    color: "red",
   },
   {
     name: "Create",
     path: "/Profile",
-    icon: <ExploreIcon />,
+    icon: <AddCircleOutlineIcon />,
   },
   {
     name: "Profile",
@@ -390,6 +393,9 @@ const Drawer = styled(MuiDrawer, {
 export default function HocNav({ Children }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+
+  const [notification, setNotification] = React.useState(1);
+
   const navigate = useNavigate();
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -453,7 +459,13 @@ export default function HocNav({ Children }) {
                     justifyContent: "center",
                   }}
                 >
-                  {text.icon}
+                  {text.name === "Notification " ? (
+                    <Badge badgeContent={2} color="secondary">
+                      {text.icon}
+                    </Badge>
+                  ) : (
+                    text.icon
+                  )}
                 </ListItemIcon>
                 <ListItemText
                   primary={text.name}
