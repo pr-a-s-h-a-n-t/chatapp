@@ -67,6 +67,8 @@ function Navs() {
             <Route path="/chat/dms" element={<Chat type="dms" />} />
 
             <Route path="/settings/profile" element={<Profile />} />
+
+ <Route path="/settings/testroute" element={<TestRoute />} />
           </Route>
         </Routes>
       </Router>
