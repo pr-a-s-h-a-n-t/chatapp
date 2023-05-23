@@ -25,7 +25,7 @@ import RecentChat from "../components/pages/V1/Chat/recentChat/index";
 import SignUp from "../components/pages/V1/Onboarding/index";
 import Profile from "../components/pages/V1/Profile/index";
 import SettingsV1 from "../components/pages/V1/Settings/index";
-
+import HomeTest from "../components/pages/home";
 // --------------------------------$$$$$$$$$$$$$$-------------------
 
 // --------sidebar------------------------
@@ -46,11 +46,8 @@ function Navs() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           {/* <Route path="/profilesetup" element={<ProfileSetup />} /> */}
-           
-          
-         
+
           <Route path="/sidebar" element={<HocNav />} />
- 
         </Routes>
 
         <Routes>
@@ -68,7 +65,7 @@ function Navs() {
 
             <Route path="/settings/profile" element={<Profile />} />
 
- <Route path="/settings/testroute" element={<TestRoute />} />
+            <Route path="/testroute" element={<HomeTest />} />
           </Route>
         </Routes>
       </Router>
