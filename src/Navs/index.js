@@ -65,7 +65,10 @@ function Navs() {
 
             <Route path="/settings/profile" element={<Profile />} />
 
-            <Route path="/testroute" element={<HomeTest />} />
+            <Route
+              path="/testroute"
+              element={<HocNav Children={<HomeTest />} />}
+            />
           </Route>
         </Routes>
       </Router>

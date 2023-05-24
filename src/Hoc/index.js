@@ -273,7 +273,14 @@ export default function HocNav({ Children }) {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        {Children}
+        <Box
+          sx={{
+            maxWidth: " 90%",
+            border: "2px solid red",
+          }}
+        >
+          {Children}
+        </Box>
       </Box>
     </Box>
   );
