@@ -56,7 +56,7 @@ const pages = [
 const Pr = [
   {
     name: "Home",
-    path: "/Search",
+    path: "/home",
     icon: <HomeIcon />,
   },
   {
@@ -168,8 +168,6 @@ export default function HocNav({ Children }) {
     setOpen(true);
   };
 
-   
-
   const handleDrawerClose = () => {
     setOpen((prev) => !prev);
   };
@@ -278,7 +276,6 @@ export default function HocNav({ Children }) {
         <Box
           sx={{
             maxWidth: " 90%",
-            border: "2px solid red",
           }}
         >
           {Children}

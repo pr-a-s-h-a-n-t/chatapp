@@ -7,8 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-import { LazyUserProfile } from "./LazyImports";
-import { LazySidebar } from "./LazyImports";
+import { LazyHome, LazyUserProfile, LazySidebar } from "./LazyImports";
 
 function Navs() {
   const ProtectedRoute = () => {
@@ -23,7 +22,12 @@ function Navs() {
     <div>
       <Router>
         <Routes>
+          {/* <Route path="/" element={<LazySidebar />} /> */}
           <Route element={<ProtectedRoute />}>
+            <Route
+              path="/home"
+              element={<LazySidebar Children={<LazyHome />} />}
+            />
             <Route
               path="/profile"
               element={<LazySidebar Children={<LazyUserProfile />} />}

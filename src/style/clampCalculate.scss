@@ -1,0 +1,9 @@
+
+@function clampCalculate($min, $max) {
+    $ratio: calc($max / 1920) * 100; // Calculate ratio based on 1920px viewport width
+    $vw: vw;
+    $px: px;
+  
+    @return clamp(#{$min}#{$px}, #{$ratio}#{$vw}, #{$max}#{$px});
+  }
+  

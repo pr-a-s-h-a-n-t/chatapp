@@ -1,17 +1,6 @@
-@mixin flexMe($direction: row, $justify: center, $align: center) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
+@import './flexMe.scss';
+@import './clampCalculate.scss';
 
-@function clampCalculate($min, $max) {
-  $ratio: calc($max / 1920) * 100; // Calculate ratio based on 1920px viewport width
-  $vw: vw;
-  $px: px;
-
-  @return clamp(#{$min}#{$px}, #{$ratio}#{$vw}, #{$max}#{$px});
-}
 
 ._profile_wrapper {
   max-width: 935px;

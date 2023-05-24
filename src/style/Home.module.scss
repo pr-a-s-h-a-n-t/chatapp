@@ -1,0 +1,92 @@
+@import "./flexMe.scss";
+@import "./clampCalculate.scss";
+
+._wrapper {
+  max-width: 935px;
+  @include flexMe(row, center, center);
+  column-gap: clampCalculate(50, 120);
+  ._content {
+    max-width: 642px;
+    ._post {
+      width: 612px;
+      border: 1px solid  #d5d5d5 ;
+      box-sizing: border-box;
+      ._postHead {
+        @include flexMe(row, space-between, center);
+
+        padding: 9px 1rem;
+        box-sizing: border-box;
+
+        > div {
+          @include flexMe(row, flex-start, center);
+          column-gap: clampCalculate(8, 22);
+          > img {
+            width: clampCalculate(32, 42);
+            height: clampCalculate(32, 42);
+            padding: 2px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            background: linear-gradient(180deg, #de0046 0%, #f7a34b 100%);
+          }
+          h4 {
+            margin: 0px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            text-transform: lowercase;
+            color: #262626;
+          }
+        }
+      }
+      ._postContent img{
+        width: 100%;
+      }
+      ._postStats {
+        @include flexMe(column, flex-start, flex-start);
+        padding: clampCalculate(4, 8) clampCalculate(12, 24);
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+        > .icon {
+          @include flexMe(row, space-between, center);
+          width: 100%;
+          padding: clampCalculate(7, 16) 0px;
+
+          > span {
+            column-gap: 1rem;
+            @include flexMe(row, center, center);
+          }
+        }
+        > ._comment {
+            @include flexMe(column, flex-start, flex-start);
+            row-gap: clampCalculate(4,8);
+          h6 {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            text-transform: lowercase;
+            color: #262626;
+            margin: 0px;
+          }
+          > span {
+            @include flexMe(row, center, center);
+            column-gap: 6px;
+            p {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18px;
+              color: #262626;
+              margin: 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+  ._right_col {
+    width: 293px;
+    height: 50%;
+    border: 2px solid black;
+  }
+}
