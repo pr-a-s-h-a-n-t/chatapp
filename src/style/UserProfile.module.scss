@@ -25,6 +25,7 @@
       width: clampCalculate(100, 150);
       height: clampCalculate(100, 150);
       border-radius: 50%;
+      outline: 1px solid #d5d5d5 !important;
     }
 
     .user_info {

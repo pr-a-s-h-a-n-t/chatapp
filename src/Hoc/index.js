@@ -168,8 +168,10 @@ export default function HocNav({ Children }) {
     setOpen(true);
   };
 
+   
+
   const handleDrawerClose = () => {
-    setOpen(false);
+    setOpen((prev) => !prev);
   };
 
   const handleNavigate = (path) => {
@@ -179,7 +181,7 @@ export default function HocNav({ Children }) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <Toolbar>
+        {/* <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -195,7 +197,7 @@ export default function HocNav({ Children }) {
           <Typography variant="h6" noWrap component="div">
             sidebar-title
           </Typography>
-        </Toolbar>
+        </Toolbar> */}
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
@@ -272,7 +274,7 @@ export default function HocNav({ Children }) {
         </Box>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+        {/* <DrawerHeader /> */}
         <Box
           sx={{
             maxWidth: " 90%",

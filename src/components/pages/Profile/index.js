@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../../style/UserProfile.module.scss";
 import Profileicon from "../../../assets/_picon.jpg";
 import SettingsICon from "../../../assets/settings.png";
-
+import Tab from "./Tab";
 function UserProfile() {
   return (
     <div className={styles._profile_wrapper}>
@@ -35,8 +35,12 @@ function UserProfile() {
           </div>
           <div className={styles._nameNDBio}>
             <h4>Prashant Mishra</h4>
+            <p> </p>
           </div>
         </div>
+      </div>
+      <div className="tabWrapper">
+        <Tab />
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ function Navs() {
         <Routes>
           <Route element={<ProtectedRoute />}>
             <Route
-              path="/testroute"
+              path="/profile"
               element={<LazySidebar Children={<LazyUserProfile />} />}
             />
           </Route>
