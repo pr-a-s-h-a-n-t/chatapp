@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../../../style/HomeMain.module.scss";
+import styles from "../../../style/UserProfile.module.scss";
 import Profileicon from "../../../assets/_picon.jpg";
 import SettingsICon from "../../../assets/settings.png";
 
-function Home() {
+function UserProfile() {
   return (
     <div className={styles._profile_wrapper}>
       <div className={styles._profileHead}>
@@ -20,7 +20,12 @@ function Home() {
             <h2>prashant8459</h2>
             <button> Edit Profile</button>
             <button className={styles._modalbtn}>
-              <img src={SettingsICon} alt="settings icon" />
+              <img
+                src={SettingsICon}
+                width={"100%"}
+                height={"100%"}
+                alt="settings icon"
+              />
             </button>
           </div>
           <div className={styles._profileStats}>
@@ -37,4 +42,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default UserProfile;
