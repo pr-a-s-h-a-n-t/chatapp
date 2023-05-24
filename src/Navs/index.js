@@ -7,7 +7,12 @@ import {
   Routes,
 } from "react-router-dom";
 
-import { LazyHome, LazyUserProfile, LazySidebar } from "./LazyImports";
+import {
+  LazyHome,
+  LazyUserProfile,
+  LazySidebar,
+  LazyMessages,
+} from "./LazyImports";
 
 function Navs() {
   const ProtectedRoute = () => {
@@ -31,6 +36,10 @@ function Navs() {
             <Route
               path="/profile"
               element={<LazySidebar Children={<LazyUserProfile />} />}
+            />
+            <Route
+              path="/inbox"
+              element={<LazySidebar Children={<LazyMessages />} />}
             />
           </Route>
         </Routes>
