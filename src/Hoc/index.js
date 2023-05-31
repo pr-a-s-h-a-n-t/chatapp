@@ -29,31 +29,8 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import Badge from "@mui/material/Badge";
 
 const drawerWidth = 240;
+
 const pages = [
-  {
-    name: "Chat",
-    path: "/chats",
-  },
-  {
-    name: "Connect",
-    path: "/connectionrequests",
-  },
-  {
-    name: " settings",
-    path: "/settings",
-  },
-
-  {
-    name: "Profile",
-    path: "/profile",
-  },
-  {
-    name: "TestPage",
-    path: "/ConversationsPageTest",
-  },
-];
-
-const Pr = [
   {
     name: "Home",
     path: "/home",
@@ -66,28 +43,28 @@ const Pr = [
   },
   {
     name: "Explore",
-    path: "/Explore",
+    path: "/explore",
     icon: <ExploreIcon />,
   },
   {
     name: "Messages",
-    path: "/chat",
+    path: "/inbox",
     icon: "<>",
   },
   {
     name: "Notification",
-    path: "/Profile",
+    path: "#",
     icon: <FavoriteBorderIcon />,
     color: "red",
   },
   {
     name: "Create",
-    path: "/Profile",
+    path: "#",
     icon: <AddCircleOutlineIcon />,
   },
   {
     name: "Profile",
-    path: "/Profile",
+    path: "/profile",
     icon: <PersonPinIcon />,
   },
 ];
@@ -210,9 +187,10 @@ export default function HocNav({ Children }) {
         <Divider />
 
         <List>
-          {Pr.map((text, index) => (
+          {pages.map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: "block" }}>
               <ListItemButton
+                onClick={() => handleNavigate(text.path)}
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? "initial" : "center",

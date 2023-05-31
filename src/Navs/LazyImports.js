@@ -6,3 +6,4 @@ export const LazyUserProfile = lazy(() =>
   import("../components/pages/Profile")
 );
 export const LazyMessages = lazy(() => import("../components/pages/messages"));
+export const LazyExplore = lazy(() => import("../components/pages/Explore"));

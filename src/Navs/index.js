@@ -12,6 +12,7 @@ import {
   LazyUserProfile,
   LazySidebar,
   LazyMessages,
+  LazyExplore,
 } from "./LazyImports";
 
 function Navs() {
@@ -40,6 +41,10 @@ function Navs() {
             <Route
               path="/inbox"
               element={<LazySidebar Children={<LazyMessages />} />}
+            />
+            <Route
+              path="/explore"
+              element={<LazySidebar Children={<LazyExplore />} />}
             />
           </Route>
         </Routes>
