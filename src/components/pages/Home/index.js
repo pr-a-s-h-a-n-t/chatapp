@@ -8,6 +8,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import SendIcon from "@mui/icons-material/Send";
 import message from "../../../assets/micon.png";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import Status from "./Status/Status";
+
 function Home() {
   const userPost = [
     {
@@ -120,6 +122,9 @@ function Home() {
     <>
       <div className={styles._wrapper}>
         <div className={styles._content}>
+          <div>
+            <Status />
+          </div>
           {userPost && userPost.length === 0 ? (
             <div className={styles._noPost}>
               <h1>No Post Found</h1>
