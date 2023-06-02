@@ -137,6 +137,7 @@ const Drawer = styled(MuiDrawer, {
 export default function HocNav({ Children }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  // const [mobileTopBar, setMobileTopBar] = React.useState(false);
 
   const [notification, setNotification] = React.useState(1);
 
@@ -152,11 +153,21 @@ export default function HocNav({ Children }) {
   const handleNavigate = (path) => {
     navigate(`${path}`);
   };
+
+  // window.addEventListener("resize", () => {
+  //   if (window.innerWidth > 768) {
+  //     setMobileTopBar(true);
+  //   } else {
+  //     setMobileTopBar(false);
+  //   }
+  // });
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        {/* <Toolbar>
+        {/* <Toolbar
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -164,6 +175,7 @@ export default function HocNav({ Children }) {
             edge="start"
             sx={{
               marginRight: 5,
+
               ...(open && { display: "none" }),
             }}
           >
@@ -253,7 +265,7 @@ export default function HocNav({ Children }) {
         {/* <DrawerHeader /> */}
         <Box
           sx={{
-            maxWidth: " 90%",
+            maxWidth: "100%",
           }}
         >
           {Children}
