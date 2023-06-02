@@ -4,6 +4,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import note from "../../../assets/note.png";
 import _picon from "../../../assets/_picon.jpg";
 import SendIcon from "@mui/icons-material/Send";
+import { Chat } from "@mui/icons-material";
+import ChatComp from "./ChatComp";
 function Messages() {
   const users = [
     {
@@ -77,12 +79,13 @@ function Messages() {
         </div>
       </div>
       <div className={styles.right_Col}>
-        <div>
+        {/* <div>
           <SendIcon />
           <h4>Your Messages</h4>
           <p>Send private photos and messages to a friend or group.</p>
           <button> Send Message</button>
-        </div>
+        </div> */}
+        <ChatComp />
       </div>
     </div>
   );
