@@ -163,6 +163,7 @@ function HocNavBar(props) {
         sx={{
           flexGrow: 1,
           p: 3,
+          paddingTop: "64px",
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >

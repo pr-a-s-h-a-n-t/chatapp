@@ -35,11 +35,11 @@ const LandingPage = () => {
                 <input required type="text" placeholder="Email" />
                 <input required type="password" placeholder="Password" />
                 <button type="submit">Log in</button>
-                <div>
+                {/* <div>
                   <p>
                     Don't have an account?<a href="/signup"> Sign up</a>
                   </p>
-                </div>
+                </div> */}
               </form>
             </div>
           </div>

@@ -2,12 +2,15 @@
 @import "./clampCalculate.scss";
 
 .__message_wrapper {
-  width: 100%;
-  height: 96vh;
+  width: 935px;
+  height: 88vh;
+  margin: auto;
   border: 2px solid greenyellow;
   @include flexMe(row, center, center);
   .left_col {
-    max-width: 350px;
+    width: 350px;
+    height: 100%;
+    overflow-y: scroll;
     border: 2px solid red;
     .head {
       @include flexMe(row, space-between, center);
@@ -52,6 +55,7 @@
   }
   .right_Col {
     width: 558px;
+    height: 100%;
     // position: relative;
     > div {
       // width: 100%;
@@ -76,28 +80,78 @@
         line-height: 11px;
         color: #8e8e8e;
       }
-      button {
-        width: 110px;
-        height: 30px;
-        background: #0095f6;
-        border-radius: 4px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 18px;
-        color: #ffffff;
-        @include flexMe(row, center, center);
-      }
+      // button {
+      //   width: 110px;
+      //   height: 30px;
+      //   background: #0095f6;
+      //   border-radius: 4px;
+      //   font-style: normal;
+      //   font-weight: 600;
+      //   font-size: 14px;
+      //   line-height: 18px;
+      //   color: #ffffff;
+      //   @include flexMe(row, center, center);
+      // }
     }
   }
 }
- 
 
 //-------- ChatComponent Scss start--------------//
 
-.__chat_container{
+.__chat_container {
   border: 2px solid red;
-}
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .__chat_header {
+    border: 2px solid green;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    @include flexMe(row, space-between, center);
+    padding: 0 1rem;
+    .__chat_header_left {
+      @include flexMe(row, space-between, center);
+      column-gap: 0.8rem;
+      width: fit-content;
+      height: 3rem;
+      overflow: hidden;
+      img {
+        border-radius: 50%;
+        border: 2px solid yellow;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: inherit;
+        margin: 0px;
+      }
+    }
+    .__chat_header_right {
+      @include flexMe(row, center, center);
+      column-gap: 0.4rem;
+      cursor: pointer;
+      svg {
+        width: clampCalculate(22, 38);
+        height: clampCalculate(22, 38);
+      }
+    }
+  }
 
+  .__chat_footer {
+    width: 100%;
+    height: 4rem;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    @include flexMe(row, space-between, center);
+    padding: 0 1rem;
+  }
+}
 
 // --------ChatComponent Scss end--------------//
