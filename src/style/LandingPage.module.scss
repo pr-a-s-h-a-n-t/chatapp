@@ -1,0 +1,82 @@
+@import "./flexMe.scss";
+@import "./clampCalculate.scss";
+
+._container {
+  width: 100%;
+  height: 100vh;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  box-sizing: border-box;
+
+  ._inner_wrapper {
+    max-width: 935px;
+    height: 90%;
+    margin: auto;
+    @include flexMe(row, center, center);
+    // column-gap: clampCalculate(50, 120);
+    border: 2px solid red;
+
+    ._left {
+      ._left__container {
+        width: 400px;
+        height: 88vh;
+
+        .prinsta_img_contn {
+          background-image: url("../assets/lp_img_contn.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+          @include flexMe(column, flex-end, center );
+
+          img {
+            width: 60%;
+            height: 82%;
+            float: right;
+          }
+        }
+      }
+    }
+
+    ._right {
+      width: 558px;
+      height: 581px;
+      border: 2px solid red;
+      ._right__container {
+        width: 558px;
+        height: 581px;
+        width: 100%;
+        height: 100%;
+        @include flexMe(column, center, center);
+
+        form {
+          margin-top: -4.88rem;
+          background-color: #ffffff;
+          @include flexMe(column, center, center);
+          input {
+            width: 260px;
+            height: 30px;
+            border: 1px solid #dbdbdb;
+            box-sizing: border-box;
+            border-radius: 3px;
+            padding: 0px 10px;
+            margin-bottom: 10px;
+          }
+
+          button {
+            width: 260px;
+            height: 30px;
+            background: #0095f6;
+            border-radius: 4px;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            color: #ffffff;
+            @include flexMe(row, center, center);
+          }
+        }
+      }
+    }
+  }
+}

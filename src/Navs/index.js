@@ -11,6 +11,8 @@ import {
   LazyHome,
   LazyUserProfile,
   LazySidebar,
+  LazyLandingPage,
+  LazySignUp,
   LazyMessages,
   LazyExplore,
 } from "./LazyImports";
@@ -28,23 +30,44 @@ function Navs() {
     <div>
       <Router>
         <Routes>
-          {/* <Route path="/" element={<LazySidebar />} /> */}
+          <Route path="/" element={<LazyLandingPage />} />
+          <Route path="/signup" element={<LazySignUp />} />
           <Route element={<ProtectedRoute />}>
             <Route
               path="/home"
-              element={<LazySidebar Children={<LazyHome />} />}
+              element={
+                <LazySidebar>
+                  <LazyHome />{" "}
+                </LazySidebar>
+              }
             />
+
             <Route
               path="/profile"
-              element={<LazySidebar Children={<LazyUserProfile />} />}
+              element={
+                <LazySidebar>
+                  {" "}
+                  <LazyUserProfile />{" "}
+                </LazySidebar>
+              }
             />
             <Route
               path="/inbox"
-              element={<LazySidebar Children={<LazyMessages />} />}
+              element={
+                <LazySidebar>
+                  {" "}
+                  <LazyMessages />{" "}
+                </LazySidebar>
+              }
             />
             <Route
               path="/explore"
-              element={<LazySidebar Children={<LazyExplore />} />}
+              element={
+                <LazySidebar>
+                  {" "}
+                  <LazyExplore />{" "}
+                </LazySidebar>
+              }
             />
           </Route>
         </Routes>

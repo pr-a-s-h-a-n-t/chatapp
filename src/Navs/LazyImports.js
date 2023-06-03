@@ -1,5 +1,11 @@
 import React, { lazy } from "react";
 
+export const LazyLandingPage = lazy(() =>
+  import("../components/pages/LandingPage")
+);
+export const LazySignUp = lazy(() =>
+  import("../components/pages/LandingPage/SignUp")
+);
 export const LazySidebar = lazy(() => import("../Hoc"));
 export const LazyHome = lazy(() => import("../components/pages/Home"));
 export const LazyUserProfile = lazy(() =>

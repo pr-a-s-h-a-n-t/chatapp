@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "../../../style/Messages.module.scss";
 import note from "../../../assets/note.png";
+// import _photo from "../../../assets/post.svg";
 import _picon from "../../../assets/_picon.jpg";
 
+import { BiVideo } from "react-icons/bi";
+import { BsTelephone } from "react-icons/bs";
+import { AiOutlineExclamationCircle } from "react-icons/ai";
 function ChatComp() {
   return (
     <div className={styles.__chat_container}>
@@ -12,9 +16,9 @@ function ChatComp() {
           <h3>prashant8459</h3>
         </div>
         <div className={styles.__chat_header_right}>
-          <img src={note} alt="icon" />
-          <img src={note} alt="icon" />
-          <img src={note} alt="icon" />
+          <BiVideo />
+          <BsTelephone />
+          <AiOutlineExclamationCircle />
         </div>
       </div>
       <div className={styles.__chat_body}>
