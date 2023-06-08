@@ -24,7 +24,7 @@ const LandingPage = () => {
           <div className={styles._left}>
             <div className={styles._left__container}>
               <div className={styles.prinsta_img_contn}>
-                <img width={"50%"} height={"50%"} src={lp_1} alt="logo" />
+                <div className={styles._p}></div>
               </div>
             </div>
           </div>

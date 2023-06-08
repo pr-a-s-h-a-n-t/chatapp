@@ -14,7 +14,6 @@
     margin: auto;
     @include flexMe(row, center, center);
     // column-gap: clampCalculate(50, 120);
-    border: 2px solid red;
 
     ._left {
       ._left__container {
@@ -24,29 +23,46 @@
         .prinsta_img_contn {
           background-image: url("../assets/lp_img_contn.png");
           background-repeat: no-repeat;
-          background-size: cover;
+          background-size: contain;
+          background-position: center;
+
           width: 100%;
           height: 100%;
-          @include flexMe(column, flex-end, center );
+          @include flexMe(column, flex-end, center);
+          position: relative;
 
-          img {
-            width: 60%;
-            height: 82%;
+          ._p {
+            background-image: url("../assets/lp_1.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 53%;
+            height: 85%;
             float: right;
+            display: flex;
+            /* justify-content: center; */
+            /* align-items: center; */
+            position: absolute;
+            /* top: 18%; */
+            transform: translate(20%, -12%);
           }
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        display: none;
       }
     }
 
     ._right {
       width: 558px;
       height: 581px;
-      border: 2px solid red;
+
       ._right__container {
-        width: 558px;
+        max-width: 558px;
         height: 581px;
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
         @include flexMe(column, center, center);
 
         form {
