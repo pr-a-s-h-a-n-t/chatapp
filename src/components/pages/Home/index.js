@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../../style/Home.module.scss";
 import profileIcons from "../../../assets/_picon.jpg";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -118,6 +118,11 @@ function Home() {
       ],
     },
   ];
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked((p) => !p);
+  };
   return (
     <>
       <div className={styles._wrapper}>
@@ -153,7 +158,12 @@ function Home() {
                   <div className={styles._postStats}>
                     <div className={styles.icon}>
                       <span>
-                        <FavoriteIcon />
+                        <FavoriteIcon
+                          style={{
+                            color: clicked ? "red" : "black",
+                          }}
+                          onClick={handleClick}
+                        />
                         <SendIcon />
                         <img src={message} alt="icon" />
                       </span>
