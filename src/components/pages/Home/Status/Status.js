@@ -25,11 +25,17 @@ const reputes = [
 
 const StatusItems = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 7,
     slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    pauseOnHover: true,
+    arrows: true,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
   };
 
   return (
@@ -40,10 +46,32 @@ const StatusItems = () => {
           display: "flex",
         }}
       >
+        <style>
+          {`
+          .slick-slider,
+          .slick-initialized,
+          .slick-list,
+          .slick-track {
+            width: 100% !important;
+            display: flex !important;
+            columnGap: 2rem;
+          }
+
+          .slick-slider,{
+            width: 110px;
+          }
+
+          `}
+        </style>
         <Slider
           {...settings}
           style={{
             position: "relative",
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            width: "100%",
+            flexDirection: "row",
           }}
         >
           {reputes.map((reputes) => (

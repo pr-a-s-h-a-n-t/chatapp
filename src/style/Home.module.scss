@@ -7,6 +7,10 @@
   column-gap: clampCalculate(50, 120);
   ._content {
     max-width: 642px;
+    ._sts_con{
+      width: 100%;
+      display: flex;
+    }
     ._post {
       width: 612px;
       border: 1px solid  #d5d5d5 ;

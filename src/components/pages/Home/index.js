@@ -122,7 +122,7 @@ function Home() {
     <>
       <div className={styles._wrapper}>
         <div className={styles._content}>
-          <div>
+          <div className={styles._sts_con}>
             <Status />
           </div>
           {userPost && userPost.length === 0 ? (
