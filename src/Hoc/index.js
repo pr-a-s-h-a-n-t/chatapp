@@ -50,7 +50,7 @@ const pages = [
   },
   {
     name: "Notification",
-    path: "#",
+    path: "/notifications",
     icon: <FavoriteBorderIcon />,
     color: "red",
   },

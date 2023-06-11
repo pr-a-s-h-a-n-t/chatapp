@@ -15,6 +15,7 @@ import {
   LazySignUp,
   LazyMessages,
   LazyExplore,
+  LazyNotifications,
 } from "./LazyImports";
 
 function Navs() {
@@ -66,6 +67,16 @@ function Navs() {
                 <LazySidebar>
                   {" "}
                   <LazyExplore />{" "}
+                </LazySidebar>
+              }
+            />
+
+            <Route
+              path="/notifications"
+              element={
+                <LazySidebar>
+                  {" "}
+                  <LazyNotifications />{" "}
                 </LazySidebar>
               }
             />

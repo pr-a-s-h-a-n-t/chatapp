@@ -13,3 +13,6 @@ export const LazyUserProfile = lazy(() =>
 );
 export const LazyMessages = lazy(() => import("../components/pages/messages"));
 export const LazyExplore = lazy(() => import("../components/pages/Explore"));
+export const LazyNotifications = lazy(() =>
+  import("../components/pages/Notifications")
+);
