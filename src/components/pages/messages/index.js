@@ -6,6 +6,8 @@ import _picon from "../../../assets/_picon.jpg";
 import SendIcon from "@mui/icons-material/Send";
 import { Chat } from "@mui/icons-material";
 import ChatComp from "./ChatComp";
+import { Grid } from "@mui/material";
+
 function Messages() {
   const users = [
     {
@@ -95,8 +97,8 @@ function Messages() {
   ];
 
   return (
-    <div className={styles.__message_wrapper}>
-      <div className={styles.left_col}>
+    <Grid container className={styles.__message_wrapper}>
+      <Grid item className={styles.left_col}>
         <div className={styles.head}>
           <div>
             {" "}
@@ -125,8 +127,8 @@ function Messages() {
             <div>loading</div>
           )}
         </div>
-      </div>
-      <div className={styles.right_Col}>
+      </Grid>
+      <Grid item className={styles.right_Col}>
         {/* <div>
           <SendIcon />
           <h4>Your Messages</h4>
@@ -134,8 +136,8 @@ function Messages() {
           <button> Send Message</button>
         </div> */}
         <ChatComp />
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 }
 

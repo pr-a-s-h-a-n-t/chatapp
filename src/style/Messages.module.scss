@@ -6,12 +6,12 @@
   height: 88vh;
   margin: auto;
   border: 2px solid greenyellow;
-  @include flexMe(row, center, center);
+  @include flexMe(row, flex-start, center);
   .left_col {
     width: 350px;
     height: 100%;
     overflow-y: scroll;
-    border: 2px solid red;
+    // border: 2px solid red;
     .head {
       @include flexMe(row, space-between, center);
       padding: 6px clampCalculate(12, 28);
