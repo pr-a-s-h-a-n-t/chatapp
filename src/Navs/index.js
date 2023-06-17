@@ -16,6 +16,7 @@ import {
   LazyMessages,
   LazyExplore,
   LazyNotifications,
+  LazySearch,
 } from "./LazyImports";
 
 function Navs() {
@@ -77,6 +78,15 @@ function Navs() {
                 <LazySidebar>
                   {" "}
                   <LazyNotifications />{" "}
+                </LazySidebar>
+              }
+            />
+
+            <Route
+              path="/search"
+              element={
+                <LazySidebar>
+                  <LazySearch />
                 </LazySidebar>
               }
             />
