@@ -25,6 +25,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
+import { Suspense } from "react";
+
 const drawerWidth = 240;
 
 const pages = [
@@ -167,7 +169,7 @@ function HocNavBar(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
-        {props.children}
+        <Suspense fallback={<div>Loading...</div>}>{props.children}</Suspense>
       </Box>
     </Box>
   );
