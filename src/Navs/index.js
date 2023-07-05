@@ -19,6 +19,8 @@ import {
   LazySearch,
 } from "./LazyImports";
 
+import { Suspense } from "react";
+
 function Navs() {
   const ProtectedRoute = () => {
     if (true) {
@@ -30,69 +32,71 @@ function Navs() {
 
   return (
     <div>
-      <Router>
-        <Routes>
-          <Route path="/" element={<LazyLandingPage />} />
-          <Route path="/signup" element={<LazySignUp />} />
-          <Route element={<ProtectedRoute />}>
-            <Route
-              path="/home"
-              element={
-                <LazySidebar>
-                  <LazyHome />{" "}
-                </LazySidebar>
-              }
-            />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<LazyLandingPage />} />
+            <Route path="/signup" element={<LazySignUp />} />
+            <Route element={<ProtectedRoute />}>
+              <Route
+                path="/home"
+                element={
+                  <LazySidebar>
+                    <LazyHome />{" "}
+                  </LazySidebar>
+                }
+              />
 
-            <Route
-              path="/profile"
-              element={
-                <LazySidebar>
-                  {" "}
-                  <LazyUserProfile />{" "}
-                </LazySidebar>
-              }
-            />
-            <Route
-              path="/inbox"
-              element={
-                <LazySidebar>
-                  {" "}
-                  <LazyMessages />{" "}
-                </LazySidebar>
-              }
-            />
-            <Route
-              path="/explore"
-              element={
-                <LazySidebar>
-                  {" "}
-                  <LazyExplore />{" "}
-                </LazySidebar>
-              }
-            />
+              <Route
+                path="/profile"
+                element={
+                  <LazySidebar>
+                    {" "}
+                    <LazyUserProfile />{" "}
+                  </LazySidebar>
+                }
+              />
+              <Route
+                path="/inbox"
+                element={
+                  <LazySidebar>
+                    {" "}
+                    <LazyMessages />{" "}
+                  </LazySidebar>
+                }
+              />
+              <Route
+                path="/explore"
+                element={
+                  <LazySidebar>
+                    {" "}
+                    <LazyExplore />{" "}
+                  </LazySidebar>
+                }
+              />
 
-            <Route
-              path="/notifications"
-              element={
-                <LazySidebar>
-                  {" "}
-                  <LazyNotifications />{" "}
-                </LazySidebar>
-              }
-            />
+              <Route
+                path="/notifications"
+                element={
+                  <LazySidebar>
+                    {" "}
+                    <LazyNotifications />{" "}
+                  </LazySidebar>
+                }
+              />
 
-            <Route
-              path="/search"
-              element={
-                <LazySidebar>
-                  <LazySearch />
-                </LazySidebar>
-              }
-            />
-          </Route>
-        </Routes>
-      </Router>
+              <Route
+                path="/search"
+                element={
+                  <LazySidebar>
+                    <LazySearch />
+                  </LazySidebar>
+                }
+              />
+            </Route>
+          </Routes>
+        </Router>
+      </Suspense>
     </div>
   );
 }
